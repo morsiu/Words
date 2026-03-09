@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(env => ({
   base: env.command == "build" ? "/sites/words/" : "",
-  define: { "__API_URL__": JSON.stringify(env.command == "build" ? "http://192.168.0.213:65363" : "http://localhost:65363") },
+  define: { "__API_URL__": JSON.stringify("http://localhost:65363") },
   plugins: [vue()],
   resolve: {
     alias: {
