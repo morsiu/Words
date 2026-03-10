@@ -29,7 +29,7 @@ namespace Mors.Words.Test
         }
 
         [Theory]
-        [MemberData("IncorrectWords")]
+        [MemberData(nameof(IncorrectWords))]
         public void ItIsNotPossibleToAddTranslationWithIncorrectPolishWord(string polishWord)
         {
             var command = new AddPolishGermanTranslationCommand(polishWord, "der Stuhl");
@@ -44,7 +44,7 @@ namespace Mors.Words.Test
         }
 
         [Theory]
-        [MemberData("IncorrectWords")]
+        [MemberData(nameof(IncorrectWords))]
         public void ItIsNotPossibleToAddTranslationWithIncorrectGermanWord(string germanWord)
         {
             var command = new AddPolishGermanTranslationCommand("krzesło", germanWord);
@@ -58,13 +58,7 @@ namespace Mors.Words.Test
             events.AssertAllEvents(e => Assert.IsNotType<PolishGermanTranslationAddedEvent>(e));
         }
 
-        public static IEnumerable<object[]> IncorrectWords =
-            new[]
-            { 
-                new[] { default(string) },
-                new[] { "" },
-                new[] { " " },
-                new[] { "	" }
-            };
+        public static TheoryData<string> IncorrectWords =
+            [default(string) , "", " ", "\t"];
     }
 }

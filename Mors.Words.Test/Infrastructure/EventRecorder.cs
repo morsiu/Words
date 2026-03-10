@@ -15,8 +15,7 @@ namespace Mors.Words.Test.Infrastructure
 
         public void AssertRecordedOneEvent<TEvent>(Action<TEvent> eventContentsAssert)
         {
-            Assert.Equal(1, _events.Count);
-            var @event = _events[0];
+            var @event = Assert.Single(_events);
             Assert.NotNull(@event);
             Assert.Equal(typeof(TEvent), @event.GetType());
             eventContentsAssert((TEvent)@event);
