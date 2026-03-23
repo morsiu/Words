@@ -6,7 +6,7 @@ namespace Mors.Words.Test.Infrastructure;
 
 internal sealed class EventRecorder
 {
-    private readonly List<object> _events = new List<object>();
+    private readonly List<object> _events = new();
 
     public void Record(object @event)
     {
