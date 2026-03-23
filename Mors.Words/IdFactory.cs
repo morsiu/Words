@@ -1,4 +1,3 @@
-﻿namespace Mors.Words
-{
-    public delegate object IdFactory();
-}
+﻿namespace Mors.Words;
+
+public delegate object IdFactory();

@@ -1,6 +1,5 @@
-﻿namespace Mors.Words.Data
+﻿namespace Mors.Words.Data;
+
+public interface IQuery<TResult>
 {
-    public interface IQuery<TResult>
-    {
-    }
 }

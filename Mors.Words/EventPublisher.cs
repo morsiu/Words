@@ -1,4 +1,3 @@
-﻿namespace Mors.Words
-{
-    public delegate void EventPublisher(object @event);
-}
+﻿namespace Mors.Words;
+
+public delegate void EventPublisher(object @event);

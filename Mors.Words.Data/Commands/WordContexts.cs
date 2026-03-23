@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Mors.Words.Data.Commands
+namespace Mors.Words.Data.Commands;
+
+[Flags]
+[DataContract(Name = "WordContexts", Namespace = "words/commands")]
+public enum WordContexts
 {
-    [Flags]
-    [DataContract(Name = "WordContexts", Namespace = "words/commands")]
-    public enum WordContexts
-    {
-        [EnumMember]
-        None = 0,
+    [EnumMember]
+    None = 0,
 
-        [EnumMember]
-        Meaning = 1,
+    [EnumMember]
+    Meaning = 1,
 
-        [EnumMember]
-        Pronunciation = 2,
-    }
+    [EnumMember]
+    Pronunciation = 2,
 }

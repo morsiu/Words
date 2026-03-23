@@ -1,14 +1,13 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Mors.Words.Data.Events
-{
-    [DataContract(Name = "WordContext", Namespace = "words/events")]
-    public enum WordContext
-    {
-        [EnumMember]
-        Meaning,
+namespace Mors.Words.Data.Events;
 
-        [EnumMember]
-        Pronunciation,
-    }
+[DataContract(Name = "WordContext", Namespace = "words/events")]
+public enum WordContext
+{
+    [EnumMember]
+    Meaning,
+
+    [EnumMember]
+    Pronunciation,
 }

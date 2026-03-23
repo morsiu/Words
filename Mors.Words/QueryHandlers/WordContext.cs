@@ -1,8 +1,7 @@
-﻿namespace Mors.Words.QueryHandlers
+﻿namespace Mors.Words.QueryHandlers;
+
+internal enum WordContext
 {
-    internal enum WordContext
-    {
-        Meaning,
-        Pronunciation,
-    }
+    Meaning,
+    Pronunciation,
 }
