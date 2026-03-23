@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Mors.Words.CommandHandlers;
 using Mors.Words.Data.Commands;
 using Mors.Words.Data.Events;
