@@ -10,11 +10,11 @@ public sealed class Bootstrapper
 {
     public void BootstrapCommands(CommandRegister commandRegister)
     {
-        var addPolishGermantTranslationCommandHander = new AddPolishGermanTranslationCommandHandler();
+        var addPolishGermanTranslationCommandHandler = new AddPolishGermanTranslationCommandHandler();
         commandRegister(
             typeof(AddPolishGermanTranslationCommand),
             (command, eventPublisher, idFactory) =>
-                addPolishGermantTranslationCommandHander.Execute(
+                addPolishGermanTranslationCommandHandler.Execute(
                     (AddPolishGermanTranslationCommand)command,
                     eventPublisher,
                     idFactory));
