@@ -3,6 +3,4 @@
 namespace Mors.Words.Data.Queries;
 
 [DataContract(Name = "TrackedWordsQuery", Namespace = "words/queries")]
-public sealed class TrackedWordsQuery : IQuery<TrackedWord>
-{
-}
+public sealed class TrackedWordsQuery : IQuery<TrackedWord>;
