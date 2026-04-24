@@ -6,8 +6,8 @@ namespace Mors.Words.Data.Commands;
 public sealed class TrackWordCommand
 {
     [DataMember]
-    public string Word { get; set; }
+    public required string Word { get; init; }
 
     [DataMember]
-    public WordContexts Contexts { get; set; }
+    public WordContexts Contexts { get; init; }
 }

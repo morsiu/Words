@@ -12,7 +12,7 @@ public class AddPolishGermanTranslationTest
     [Fact]
     public void ItIsPossibleToAddTranslation()
     {
-        var command = new AddPolishGermanTranslationCommand("krzesło", "der Stuhl");
+        var command = new AddPolishGermanTranslationCommand { PolishWord = "krzesło", GermanWord = "der Stuhl" };
         var handler = new AddPolishGermanTranslationCommandHandler();
         var events = new EventRecorder();
 
@@ -29,9 +29,9 @@ public class AddPolishGermanTranslationTest
 
     [Theory]
     [MemberData(nameof(IncorrectWords))]
-    public void ItIsNotPossibleToAddTranslationWithIncorrectPolishWord(string polishWord)
+    public void ItIsNotPossibleToAddTranslationWithIncorrectPolishWord(string? polishWord)
     {
-        var command = new AddPolishGermanTranslationCommand(polishWord, "der Stuhl");
+        var command = new AddPolishGermanTranslationCommand { PolishWord = polishWord!, GermanWord = "der Stuhl" };
         var handler = new AddPolishGermanTranslationCommandHandler();
         var events = new EventRecorder();
 
@@ -44,9 +44,9 @@ public class AddPolishGermanTranslationTest
 
     [Theory]
     [MemberData(nameof(IncorrectWords))]
-    public void ItIsNotPossibleToAddTranslationWithIncorrectGermanWord(string germanWord)
+    public void ItIsNotPossibleToAddTranslationWithIncorrectGermanWord(string? germanWord)
     {
-        var command = new AddPolishGermanTranslationCommand("krzesło", germanWord);
+        var command = new AddPolishGermanTranslationCommand { PolishWord = "krzesło", GermanWord = germanWord! };
         var handler = new AddPolishGermanTranslationCommandHandler();
         var events = new EventRecorder();
 
@@ -57,6 +57,6 @@ public class AddPolishGermanTranslationTest
         events.AssertAllEvents(e => Assert.IsNotType<PolishGermanTranslationAddedEvent>(e));
     }
 
-    public static TheoryData<string> IncorrectWords =
-        [default(string) , "", " ", "\t"];
+    public static TheoryData<string?> IncorrectWords =
+        [default(string?) , "", " ", "\t"];
 }

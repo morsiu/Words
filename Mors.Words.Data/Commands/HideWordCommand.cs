@@ -6,8 +6,8 @@ namespace Mors.Words.Data.Commands;
 public sealed class HideWordCommand
 {
     [DataMember]
-    public string Word { get; set; }
+    public required string Word { get; init; }
 
     [DataMember]
-    public WordContext Context { get; set; }
+    public WordContext Context { get; init; }
 }
